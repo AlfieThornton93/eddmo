@@ -39,3 +39,7 @@ def login
   password.send_keys @password
   submitBtn = @driver.find_element(css: 'body > form > input[type="submit"]').click
 end
+
+def logout
+  #clickLogout = @driver.find_element(xpath: ' /html/body/nav/form/input[2]').click
+end
