@@ -20,8 +20,12 @@ RSpec.configure do |config|
 
 end
 
+def url(url)
+  "http://localhost:3000" + url
+end
+
 def register
-  @driver.navigate.to 'http://localhost:3000/users/new'
+  @driver.navigate.to url('/users/new')
   username = @driver.find_element(name: 'username')
   username.send_keys @username
   email = @driver.find_element(name: 'email')
@@ -32,7 +36,7 @@ def register
 end
 
 def login
-  @driver.navigate.to 'http://localhost:3000/sessions/new' if @driver.current_url != 'http://localhost:3000/sessions/new'
+  @driver.navigate.to url('/sessions/new') if @driver.current_url != url('/sessions/new')
   email = @driver.find_element(name: 'email')
   email.send_keys @email
   password = @driver.find_element(name: 'password')
