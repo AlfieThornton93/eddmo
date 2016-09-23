@@ -1,0 +1,3 @@
+login_details:
+  - email: test1@test.com
+    password: abc123
